@@ -20,6 +20,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".views.activities.LoginPage"
+            android:exported="true"
+            android:theme="@style/style_splace"
+            >
+
+        </activity>
+        <activity
+            android:name=".views.activities.RegisterPage"
+            android:exported="true"
+            android:theme="@style/style_splace"
+            >
+
+        </activity>
     </application>
 
 </manifest>
