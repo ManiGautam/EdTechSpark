@@ -25,9 +25,9 @@ Button Register;
 
         preferenceManager = PreferenceManager.getInstance(this);
 
-        email = findViewById(R.id.Email);
+        email = findViewById(R.id.edtName);
 
-        password = findViewById(R.id.Password);
+        password = findViewById(R.id.edtEmail);
 
         Login = findViewById(R.id.Login);
         Login.setOnClickListener(new View.OnClickListener() {

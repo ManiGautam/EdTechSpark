@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginPage">
+    tools:context=".views.activities.LoginPage">
 
 
     <TextView
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/Email"
+        android:id="@+id/edtName"
         android:layout_width="241dp"
         android:layout_height="47dp"
         android:inputType="textEmailAddress"
@@ -33,7 +33,7 @@
         android:drawableStart="@drawable/email"/>
 
     <EditText
-        android:id="@+id/Password"
+        android:id="@+id/edtEmail"
         android:layout_width="241dp"
         android:layout_height="47dp"
         android:hint="Password"

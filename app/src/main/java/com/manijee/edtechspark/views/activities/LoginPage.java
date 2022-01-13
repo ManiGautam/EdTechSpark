@@ -36,11 +36,11 @@ public class LoginPage extends AppCompatActivity {
         }
         preferenceManager = PreferenceManager.getInstance(this);
 
-        email = findViewById(R.id.Email);
+        email = findViewById(R.id.edtName);
 
         e = email;
 
-        password = findViewById(R.id.Password);
+        password = findViewById(R.id.edtEmail);
 
         p = password;
 

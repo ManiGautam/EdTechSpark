@@ -4,45 +4,84 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterPage">
+    tools:context=".views.activities.RegisterPage">
+
     <TextView
         android:id="@+id/registerinyouraccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register and start"
-        android:textSize="25dp"
+        android:text="User SigUp"
         android:textColor="@color/black"
+        android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <EditText
-        android:id="@+id/Email"
+        android:id="@+id/edtName"
         android:layout_width="241dp"
         android:layout_height="47dp"
+        android:hint="Name"
         android:inputType="textEmailAddress"
-        android:hint="Email"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.239"
-        android:drawableStart="@drawable/email"/>
+        app:layout_constraintVertical_bias="0.239" />
 
     <EditText
-        android:id="@+id/Password"
+        android:id="@+id/edtEmail"
         android:layout_width="241dp"
         android:layout_height="47dp"
-        android:hint="Password"
+        android:hint="Email"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.374"
-        android:drawableStart="@drawable/password"/>
+        app:layout_constraintVertical_bias="0.374" />
+
+    <EditText
+        android:id="@+id/edtPassword"
+        android:layout_width="241dp"
+        android:layout_height="47dp"
+        android:hint="Password"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/edtConfirmPassword"
+        android:layout_width="241dp"
+        android:layout_height="47dp"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.616" />
+
+    <EditText
+        android:id="@+id/edtContact"
+        android:layout_width="241dp"
+        android:layout_height="47dp"
+        android:hint="Contact"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.733" />
 
     <Button
         android:id="@+id/btnRegister"
@@ -54,8 +93,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.525" />
-
+        app:layout_constraintVertical_bias="0.857" />
 
     <TextView
         android:id="@+id/Login"
