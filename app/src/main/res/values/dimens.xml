@@ -3,4 +3,5 @@
     <dimen name="size_200_dp">200dp</dimen>
     <dimen name="size_20_sp">20sp</dimen>
     <dimen name="size_150_dp">150dp</dimen>
+    <dimen name="size_5_dp">10dp</dimen>
 </resources>

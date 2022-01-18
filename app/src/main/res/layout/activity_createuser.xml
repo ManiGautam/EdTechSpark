@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.activities.RegisterPage">
+    tools:context=".views.activities.CreateUserActivity"
+    style="@style/edt_style"
+    android:padding="@dimen/size_5_dp">
 
     <TextView
         android:id="@+id/registerinyouraccount"
@@ -13,6 +15,7 @@
         android:text="User SigUp"
         android:textColor="@color/black"
         android:textSize="25dp"
+        android:padding="@dimen/size_5_dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,6 +27,8 @@
         android:layout_height="47dp"
         android:hint="Name"
         android:inputType="textEmailAddress"
+        android:background="@drawable/edtstyle"
+        android:padding="@dimen/size_5_dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
@@ -37,6 +42,8 @@
         android:layout_height="47dp"
         android:hint="Email"
         android:inputType="textPassword"
+        android:background="@drawable/edtstyle"
+        android:padding="@dimen/size_5_dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
@@ -50,6 +57,8 @@
         android:layout_height="47dp"
         android:hint="Password"
         android:inputType="textEmailAddress"
+        android:background="@drawable/edtstyle"
+        android:padding="@dimen/size_5_dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.505"
@@ -62,6 +71,8 @@
         android:layout_width="241dp"
         android:layout_height="47dp"
         android:hint="Confirm Password"
+        android:background="@drawable/edtstyle"
+        android:padding="@dimen/size_5_dp"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -75,6 +86,8 @@
         android:layout_width="241dp"
         android:layout_height="47dp"
         android:hint="Contact"
+        android:background="@drawable/edtstyle"
+        android:padding="@dimen/size_5_dp"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -87,7 +100,10 @@
         android:id="@+id/btnRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register"
+        android:text="Sign Up"
+        android:textColor="@color/white"
+        android:backgroundTint="#1b6ec2"
+        android:padding="@dimen/size_5_dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -95,16 +111,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.857" />
 
-    <TextView
-        android:id="@+id/Login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.97"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.917" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

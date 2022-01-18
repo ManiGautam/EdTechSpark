@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,21 +18,13 @@ public class LoginPage extends AppCompatActivity {
     EditText e, p;
     PreferenceManager preferenceManager;
     Button Login;
-    CheckBox checkBox;
     TextView Register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
-        if (preferenceManager == null) {
 
-        } else {
-
-            Intent move = new Intent(LoginPage.this, SplashScreen.class);
-            startActivity(move);
-
-        }
         preferenceManager = PreferenceManager.getInstance(this);
 
         email = findViewById(R.id.edtName);
@@ -43,28 +34,15 @@ public class LoginPage extends AppCompatActivity {
         password = findViewById(R.id.edtEmail);
 
         p = password;
-
+Register = findViewById(R.id.Notregisteryet);
+Register.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent register = new Intent(LoginPage.this,CreateUserActivity.class);
+        startActivity(register);
+    }
+});
         Login = findViewById(R.id.btnLogin);
-
-        checkBox = findViewById(R.id.checkBox);
-
-        checkBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-            }
-        });
-
-        Register = findViewById(R.id.Notregisteryet);
-
-        Register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent register = new Intent(LoginPage.this, com.manijee.edtechspark.views.activities.RegisterPage.class);
-                startActivity(register);
-            }
-        });
 
 
         Login.setOnClickListener(new View.OnClickListener() {
@@ -90,10 +68,11 @@ public class LoginPage extends AppCompatActivity {
         String userPassword = preferenceManager.getInfo("password");
         if (email.getText().toString().equals(userId) && password.getText().toString().equals(userPassword)) {
             Toast.makeText(this, "Login Success", Toast.LENGTH_SHORT).show();
-            Intent move = new Intent(LoginPage.this, SplashScreen.class);
+            Intent move = new Intent(LoginPage.this, CreateUserActivity.class);
             startActivity(move);
         } else {
             Toast.makeText(this, "Id password not matched", Toast.LENGTH_SHORT).show();
+
         }
 
     }
