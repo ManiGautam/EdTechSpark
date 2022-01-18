@@ -1,17 +1,16 @@
 package com.manijee.edtechspark.model;
 
-public class User {
+public class CreateUserRequestModel {
     private  static String Name;
     private  static String Email;
     private  static String Password;
     private  static String ConfirmPassword;
     private  static String Contact;
 
-    public User(String name, String email, String password, String confirmPassword, String contact) {
+    public CreateUserRequestModel(String name, String email, String password,  String contact) {
         this.Name = name;
         this.Email = email;
         this.Password = password;
-        this.ConfirmPassword = confirmPassword;
         this.Contact = contact;
     }
     public static String getName() {
@@ -38,13 +37,6 @@ public class User {
         Password = password;
     }
 
-    public static String getConfirmPassword() {
-        return ConfirmPassword;
-    }
-
-    public static void setConfirmPassword(String confirmPassword) {
-        ConfirmPassword = confirmPassword;
-    }
 
     public static String getContact() {
         return Contact;

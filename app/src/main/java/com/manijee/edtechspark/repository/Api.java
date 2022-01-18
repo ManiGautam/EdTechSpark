@@ -3,8 +3,8 @@ package com.manijee.edtechspark.repository;
 import com.manijee.edtechspark.model.CartRequestmodel;
 import com.manijee.edtechspark.model.CartSavedErrorResponsemodel;
 import com.manijee.edtechspark.model.CommonResponse;
-import com.manijee.edtechspark.model.User;
-import com.manijee.edtechspark.model.UserRequestModel;
+import com.manijee.edtechspark.model.CreateUserRequestModel;
+import com.manijee.edtechspark.model.ValidateUserRequestModel;
 import com.manijee.edtechspark.model.ValidateUserResponsemodel;
 
 
@@ -21,108 +21,108 @@ public interface Api {
     public static final String BASE_URL="http://edtechsparkapi.azurewebsites.net/";
 
     @POST("api/Auth/CreateUser")
-    Call<CommonResponse> createUser(@Body User user);
+    Call<CommonResponse> createUser(@Body CreateUserRequestModel createUserRequestModel);
 
     @POST("api/Auth/ValidateUser")
-    Call<ValidateUserResponsemodel> validateUser(@Body UserRequestModel userRequestModel);
+    Call<ValidateUserResponsemodel> validateUser(@Body ValidateUserRequestModel userRequestModel);
 
     @POST("api/Cart/SaveCart")
     Call<CartSavedErrorResponsemodel> SaveCart(@Body CartRequestmodel cartRequestmodel);
 
     @GET("api/Catalog/GetAll")
-    Call<List<User>> getAllCatalog(User user);
+    Call<List<CreateUserRequestModel>> getAllCatalog(CreateUserRequestModel createUserRequestModel);
 
     @GET("api/Catalog/GetCourseWithLessons/wd")
-    Call<List<User>> getCoursewithLesson();
+    Call<List<CreateUserRequestModel>> getCoursewithLesson();
 
     @GET("api/Category/GetAll")
-    Call<List<User>> getAllCategory(User user);
+    Call<List<CreateUserRequestModel>> getAllCategory(CreateUserRequestModel createUserRequestModel);
 
     @POST("api/Category/Add")
-    Call<List<User>> addCategory(User user);
+    Call<List<CreateUserRequestModel>> addCategory(CreateUserRequestModel createUserRequestModel);
 
     @GET("api/Course/GetAll")
-    Call<List<User>> getAllCourses(User user);
+    Call<List<CreateUserRequestModel>> getAllCourses(CreateUserRequestModel createUserRequestModel);
 
     @GET("api/Course/Get")
-    Call<List<User>> getCoureswithCategory(User user);
+    Call<List<CreateUserRequestModel>> getCoureswithCategory(CreateUserRequestModel createUserRequestModel);
 
     @POST("api/Course/Add")
-    Call<List<User>> addCourse(User user);
+    Call<List<CreateUserRequestModel>> addCourse(CreateUserRequestModel createUserRequestModel);
 
     @PUT("api/Course/Update")
-    Call<List<User>> updateCourse(User user);
+    Call<List<CreateUserRequestModel>> updateCourse(CreateUserRequestModel createUserRequestModel);
 
     @DELETE("api/Course/Delete")
-    Call<List<User>> deleteCourse(User user);
+    Call<List<CreateUserRequestModel>> deleteCourse(CreateUserRequestModel createUserRequestModel);
 
     @GET("api/Course/GetCourseSubscription")
-    Call<List<User>> getCourseSubscriptionbyuseridandcourseid(User user);
+    Call<List<CreateUserRequestModel>> getCourseSubscriptionbyuseridandcourseid(CreateUserRequestModel createUserRequestModel);
 
     @GET("api/Course/GetSubscribedCourses")
-    Call<List<User>> getsubscibedcoursesbyuserid(User user);
+    Call<List<CreateUserRequestModel>> getsubscibedcoursesbyuserid(CreateUserRequestModel createUserRequestModel);
 
     @GET("api/CourseTopic/GetAll")
-    Call<List<User>> getallCourseTopic(User user);
+    Call<List<CreateUserRequestModel>> getallCourseTopic(CreateUserRequestModel createUserRequestModel);
 
     @GET("api/CourseTopic/Get")
-    Call<List<User>> getCoursetopicbyid(User user);
+    Call<List<CreateUserRequestModel>> getCoursetopicbyid(CreateUserRequestModel createUserRequestModel);
 
     @GET("api/CourseTopic/GetTopicsByCourse")
-    Call<List<User>> getcoursetopicbycourseid(User user);
+    Call<List<CreateUserRequestModel>> getcoursetopicbycourseid(CreateUserRequestModel createUserRequestModel);
 
     @POST("api/CourseTopic/Add")
-    Call<List<User>> addCoursetopic(User user);
+    Call<List<CreateUserRequestModel>> addCoursetopic(CreateUserRequestModel createUserRequestModel);
 
     @PUT("api/CourseTopic/Update")
-    Call<List<User>> updateCoursetopic(User user);
+    Call<List<CreateUserRequestModel>> updateCoursetopic(CreateUserRequestModel createUserRequestModel);
 
     @DELETE("api/CourseTopic/Delete")
-    Call<List<User>> deleteCoursetopic(User user);
+    Call<List<CreateUserRequestModel>> deleteCoursetopic(CreateUserRequestModel createUserRequestModel);
 
     @GET("api/CourseLesson/GetAll")
-    Call<List<User>> getallcourselesson(User user);
+    Call<List<CreateUserRequestModel>> getallcourselesson(CreateUserRequestModel createUserRequestModel);
 
     @GET("api/CourseLesson/Get")
-    Call<List<User>> getcourselessonbyid(User user);
+    Call<List<CreateUserRequestModel>> getcourselessonbyid(CreateUserRequestModel createUserRequestModel);
 
     @GET("api/CourseLesson/GetLessonsByTopic")
-    Call<List<User>> getcourselessonbycoursetopic(User user);
+    Call<List<CreateUserRequestModel>> getcourselessonbycoursetopic(CreateUserRequestModel createUserRequestModel);
 
     @POST("api/CourseLesson/Add")
-    Call<List<User>> addCourselesson(User user);
+    Call<List<CreateUserRequestModel>> addCourselesson(CreateUserRequestModel createUserRequestModel);
 
     @PUT("/api/CourseLesson/Update")
-    Call<List<User>> updateCourselesson(User user);
+    Call<List<CreateUserRequestModel>> updateCourselesson(CreateUserRequestModel createUserRequestModel);
 
     @DELETE("api/CourseLesson/Delete")
-    Call<List<User>> deleteCourselesson(User user);
+    Call<List<CreateUserRequestModel>> deleteCourselesson(CreateUserRequestModel createUserRequestModel);
 
     @GET("api/Mentor/GetAll")
-    Call<List<User>> getallMentor(User user);
+    Call<List<CreateUserRequestModel>> getallMentor(CreateUserRequestModel createUserRequestModel);
 
     @GET("api/Mentor/Get")
-    Call<List<User>> getMentorbyid(User user);
+    Call<List<CreateUserRequestModel>> getMentorbyid(CreateUserRequestModel createUserRequestModel);
 
     @POST("api/Mentor/Add")
-    Call<List<User>> addMentor(User user);
+    Call<List<CreateUserRequestModel>> addMentor(CreateUserRequestModel createUserRequestModel);
 
     @PUT("api/Mentor/Update")
-    Call<List<User>> updatementor(User user);
+    Call<List<CreateUserRequestModel>> updatementor(CreateUserRequestModel createUserRequestModel);
 
     @DELETE("/api/Mentor/Delete")
-    Call<List<User>> deletementor(User user);
+    Call<List<CreateUserRequestModel>> deletementor(CreateUserRequestModel createUserRequestModel);
 
     @GET("api/Order/GetUserOrders")
-    Call<List<User>> getuserorder(User user);
+    Call<List<CreateUserRequestModel>> getuserorder(CreateUserRequestModel createUserRequestModel);
 
     @GET("api/Order/GetOrderDetails")
-    Call<List<User>> getorderdetalis(User user);
+    Call<List<CreateUserRequestModel>> getorderdetalis(CreateUserRequestModel createUserRequestModel);
 
     @POST("api/Payment/CreateOrder")
-    Call<List<User>> createorder(User user);
+    Call<List<CreateUserRequestModel>> createorder(CreateUserRequestModel createUserRequestModel);
 
     @POST("api/Payment/SavePaymentDetails")
-    Call<List<User>> savePaymentDetalies(User user);
+    Call<List<CreateUserRequestModel>> savePaymentDetalies(CreateUserRequestModel createUserRequestModel);
 
 }

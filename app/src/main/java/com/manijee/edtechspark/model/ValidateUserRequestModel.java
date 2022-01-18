@@ -1,10 +1,10 @@
 package com.manijee.edtechspark.model;
 
-public class UserRequestModel {
+public class ValidateUserRequestModel {
     String username;
     String password;
 
-    public UserRequestModel(String username, String password) {
+    public ValidateUserRequestModel(String username, String password) {
         this.username = username;
         this.password = password;
     }

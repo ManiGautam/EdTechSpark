@@ -1,6 +1,6 @@
 package com.manijee.edtechspark.repository;
 
-import com.manijee.edtechspark.model.User;
+import com.manijee.edtechspark.model.CreateUserRequestModel;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiManager {
     private static ApiManager instance = null;
     private static Api myApi;
-    public User user;
+    public CreateUserRequestModel createUserRequestModel;
     private ApiManager() {
         Retrofit retrofit = new Retrofit.Builder().baseUrl(Api.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
