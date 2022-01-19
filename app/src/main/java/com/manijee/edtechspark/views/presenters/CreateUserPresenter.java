@@ -1,5 +1,7 @@
 package com.manijee.edtechspark.views.presenters;
 
+import android.util.Log;
+
 import com.manijee.edtechspark.model.CommonResponse;
 import com.manijee.edtechspark.model.CreateUserRequestModel;
 import com.manijee.edtechspark.repository.ApiManager;
@@ -15,11 +17,13 @@ public class CreateUserPresenter {
        call.enqueue(new Callback<CommonResponse>() {
            @Override
            public void onResponse(Call<CommonResponse> call, Response<CommonResponse> response) {
+               Log.e("response", String.valueOf(response.code()));
                if (response.code()==201) {
                    CommonResponse response1= response.body();
-                   listener.onCreateUserSuccess(response.body());
+                   listener.onCreateUserSuccess(response1);
                }else{
-                 listener.onCreateUserFail("Could not register,Please try agin later");
+                 listener.onCreateUserFail("Could not register,Please try agin later"+response.code()+":"+response.message());
+
                }
            }
 

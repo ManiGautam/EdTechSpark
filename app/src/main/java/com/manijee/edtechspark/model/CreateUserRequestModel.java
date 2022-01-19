@@ -1,48 +1,58 @@
 package com.manijee.edtechspark.model;
 
 public class CreateUserRequestModel {
-    private  static String Name;
-    private  static String Email;
-    private  static String Password;
-    private  static String ConfirmPassword;
-    private  static String Contact;
+    private   String name;
+    private   String email;
+    private   String password;
 
-    public CreateUserRequestModel(String name, String email, String password,  String contact) {
-        this.Name = name;
-        this.Email = email;
-        this.Password = password;
-        this.Contact = contact;
-    }
-    public static String getName() {
-        return Name;
-    }
+    private   String contact;
+    private   String role;
 
-    public static void setName(String name) {
-        Name = name;
+    public CreateUserRequestModel(String name, String email, String password, String contact, String role) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.contact = contact;
+        this.role = role;
     }
 
-    public static String getEmail() {
-        return Email;
+    public String getName() {
+        return name;
     }
 
-    public static void setEmail(String email) {
-        Email = email;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public static String getPassword() {
-        return Password;
+    public String getEmail() {
+        return email;
     }
 
-    public static void setPassword(String password) {
-        Password = password;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-
-    public static String getContact() {
-        return Contact;
+    public String getPassword() {
+        return password;
     }
 
-    public static void setContact(String contact) {
-        Contact = contact;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }
