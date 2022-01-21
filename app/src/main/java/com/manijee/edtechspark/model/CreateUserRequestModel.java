@@ -1,27 +1,20 @@
 package com.manijee.edtechspark.model;
 
 public class CreateUserRequestModel {
-    private   String name;
     private   String email;
+    private   String name;
     private   String password;
-
-    private   String contact;
+    private   String confirmPassword;
+    private   String phoneNumber;
     private   String role;
 
-    public CreateUserRequestModel(String name, String email, String password, String contact, String role) {
-        this.name = name;
+    public CreateUserRequestModel(String email, String name, String password, String confirmPassword, String phoneNumber, String role) {
         this.email = email;
-        this.password = password;
-        this.contact = contact;
-        this.role = role;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
         this.name = name;
+        this.password = password;
+        this.confirmPassword = confirmPassword;
+        this.phoneNumber = phoneNumber;
+        this.role = role;
     }
 
     public String getEmail() {
@@ -32,6 +25,14 @@ public class CreateUserRequestModel {
         this.email = email;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getPassword() {
         return password;
     }
@@ -40,12 +41,20 @@ public class CreateUserRequestModel {
         this.password = password;
     }
 
-    public String getContact() {
-        return contact;
+    public String getConfirmPassword() {
+        return confirmPassword;
     }
 
-    public void setContact(String contact) {
-        this.contact = contact;
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String getRole() {

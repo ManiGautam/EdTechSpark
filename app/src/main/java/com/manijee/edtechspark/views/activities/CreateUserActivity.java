@@ -20,6 +20,9 @@ import com.manijee.edtechspark.repository.ApiManager;
 import com.manijee.edtechspark.repository.CreateUserListener;
 import com.manijee.edtechspark.views.presenters.CreateUserPresenter;
 
+import okhttp3.ResponseBody;
+import retrofit2.Response;
+
 public class CreateUserActivity extends AppCompatActivity implements CreateUserListener {
     ProgressBar progressBar;
 EditText email,password,confirm_pass,contact,name;
@@ -33,9 +36,9 @@ Button Register;
 
         preferenceManager = PreferenceManager.getInstance(this);
 
-        email = findViewById(R.id.edtName);
+        email = findViewById(R.id.edtEmail);
 
-        password = findViewById(R.id.edtEmail);
+        password = findViewById(R.id.edtPassword);
         confirm_pass=findViewById(R.id.edtConfirmPassword);
         name = findViewById(R.id.edtName);
         contact = findViewById(R.id.edtContact);
@@ -52,16 +55,17 @@ progressBar = findViewById(R.id.progressBar);
                         TextUtils.isEmpty(name.getText().toString())
                 ) {
                     Toast.makeText(CreateUserActivity.this, "Id and Password field should not empty", Toast.LENGTH_SHORT).show();
-                }else if(confirm_pass.getText().toString().equals(password.getText().toString())){
+                }else if(!confirm_pass.getText().toString().equals(password.getText().toString())){
                     Toast.makeText(CreateUserActivity.this, "Password and Confirm password does not match", Toast.LENGTH_SHORT).show();
                     confirm_pass.setText("");
                 }else{
                     progressBar.setVisibility(View.VISIBLE);
                     CreateUserRequestModel user=new CreateUserRequestModel(
-                            name.getText().toString(),
                             email.getText().toString(),
-                            contact.getText().toString(),
+                            name.getText().toString(),
                             password.getText().toString(),
+                            confirm_pass.getText().toString(),
+                            contact.getText().toString(),
                             "user"
                     );
                     CreateUserPresenter presenter=new CreateUserPresenter();
@@ -72,9 +76,9 @@ progressBar = findViewById(R.id.progressBar);
     }
 
     @Override
-    public void onCreateUserSuccess(CommonResponse response) {
+    public void onCreateUserSuccess(Response response) {
         progressBar.setVisibility(View.GONE);
-        Toast.makeText(this, ""+response.getDescription(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, ""+response.message(), Toast.LENGTH_SHORT).show();
 
     }
 

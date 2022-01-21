@@ -10,6 +10,7 @@ import com.manijee.edtechspark.model.ValidateUserResponsemodel;
 
 import java.util.List;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
@@ -21,7 +22,7 @@ public interface Api {
     public static final String BASE_URL="http://edtechsparkapi.azurewebsites.net/";
 
     @POST("api/Auth/CreateUser")
-    Call<CommonResponse> createUser(@Body CreateUserRequestModel createUserRequestModel);
+    Call<ResponseBody> createUser(@Body CreateUserRequestModel createUserRequestModel);
 
     @POST("api/Auth/ValidateUser")
     Call<ValidateUserResponsemodel> validateUser(@Body ValidateUserRequestModel userRequestModel);
