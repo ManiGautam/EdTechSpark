@@ -25,9 +25,9 @@
         android:id="@+id/edtName"
         android:layout_width="241dp"
         android:layout_height="47dp"
-        android:inputType="textEmailAddress"
-        android:hint="Email"
         android:background="@drawable/edtstyle"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
         android:padding="@dimen/size_5_dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,7 +35,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.239"
-/>
+        />
 
     <EditText
         android:id="@+id/edtEmail"
@@ -50,8 +50,7 @@
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.374"
-/>
+        app:layout_constraintVertical_bias="0.374" />
 
     <Button
         android:id="@+id/btnLogin"
@@ -68,19 +67,29 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.525" />
 
-
     <TextView
         android:id="@+id/Notregisteryet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register"
         android:padding="@dimen/size_5_dp"
-        android:textSize="30dp"
+        android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.988"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.886" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

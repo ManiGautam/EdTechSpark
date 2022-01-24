@@ -2,24 +2,31 @@ package com.manijee.edtechspark.views.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.manijee.edtechspark.R;
+import com.manijee.edtechspark.common.Utills;
+import com.manijee.edtechspark.model.ValidateUserRequestModel;
+import com.manijee.edtechspark.repository.ValidateUserListener;
+import com.manijee.edtechspark.views.presenters.ValidateUserPresenter;
 
-public class LoginPage extends AppCompatActivity {
+import retrofit2.Response;
+
+public class LoginPage extends AppCompatActivity implements ValidateUserListener {
+    ProgressBar progressBar;
     EditText email, password;
-    EditText e, p;
     PreferenceManager preferenceManager;
     Button Login;
     TextView Register;
-
+ValidateUserPresenter validateUserPresenter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,13 +34,14 @@ public class LoginPage extends AppCompatActivity {
 
         preferenceManager = PreferenceManager.getInstance(this);
 
-        email = findViewById(R.id.edtName);
+        validateUserPresenter = new ValidateUserPresenter();
 
-        e = email;
+        email = findViewById(R.id.edtName);
 
         password = findViewById(R.id.edtEmail);
 
-        p = password;
+        progressBar = findViewById(R.id.progressBar);
+
 Register = findViewById(R.id.Notregisteryet);
 Register.setOnClickListener(new View.OnClickListener() {
     @Override
@@ -43,40 +51,45 @@ Register.setOnClickListener(new View.OnClickListener() {
     }
 });
         Login = findViewById(R.id.btnLogin);
-
-
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                HandleLoginClick();
+               if(validateUserPresenter.ValidateEmail(email)&&validateUserPresenter.ValidatePassword(password)){
+                   ValidateUserDetalisfromserver();
+               }else {
+                    Utills.getInstance().ShowMessage(v.getRootView(),"Please enter valid email id and password");
+               }
+
+
             }
         });
     }
 
-    public void HandleLoginClick() {
-        if (TextUtils.isEmpty(email.getText()) && TextUtils.isEmpty(password.getText())) {
-            Toast.makeText(this, "Please enter id and password first", Toast.LENGTH_SHORT).show();
-        } else {
-            saveUserDetailsOnDevice();
-
-        }
-
-    }
-
-    private void saveUserDetailsOnDevice() {
-        String userId = preferenceManager.getInfo("userId");
-        String userPassword = preferenceManager.getInfo("password");
-        if (email.getText().toString().equals(userId) && password.getText().toString().equals(userPassword)) {
-            Toast.makeText(this, "Login Success", Toast.LENGTH_SHORT).show();
-            Intent move = new Intent(LoginPage.this, CreateUserActivity.class);
-            startActivity(move);
-        } else {
-            Toast.makeText(this, "Id password not matched", Toast.LENGTH_SHORT).show();
-
-        }
+    private void ValidateUserDetalisfromserver() {
+        progressBar.setVisibility(View.VISIBLE);
+        ValidateUserRequestModel user = new ValidateUserRequestModel(
+                email.getText().toString(),
+                password.getText().toString()
+        );
+        validateUserPresenter.validateUser(this,user);
 
     }
 
+
+    @Override
+    public void onValidateUserSuccess(Response response) {
+        progressBar.setVisibility(View.GONE);
+       // ValidateUserResponsemodel validateUserResponsemodel = response.body();
+        Log.i("login:","Succsess");
+        Intent move = new Intent(LoginPage.this,MainActivity.class);
+        startActivity(move);
+    }
+
+    @Override
+    public void onValidateUserFail(String msg) {
+        progressBar.setVisibility(View.GONE);
+        Toast.makeText(this, ""+msg, Toast.LENGTH_SHORT).show();
+    }
 
 
 }
