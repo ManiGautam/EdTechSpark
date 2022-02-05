@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edtName"
+        android:id="@+id/edtEmail"
         android:layout_width="241dp"
         android:layout_height="47dp"
         android:background="@drawable/edtstyle"
@@ -37,48 +37,74 @@
         app:layout_constraintVertical_bias="0.239"
         />
 
+    <TextView
+        android:id="@+id/edtplsemail"
+        android:layout_width="239dp"
+        android:layout_height="27dp"
+        android:text="please enter valid email"
+        android:textColor="#FF0202"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.316" />
+
     <EditText
-        android:id="@+id/edtEmail"
+        android:id="@+id/edtPassword"
         android:layout_width="241dp"
         android:layout_height="47dp"
+        android:background="@drawable/edtstyle"
         android:hint="Password"
         android:inputType="textPassword"
         android:padding="@dimen/size_5_dp"
-        android:background="@drawable/edtstyle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.374" />
+        app:layout_constraintVertical_bias="0.408" />
+
+    <TextView
+        android:id="@+id/edtplspassword"
+        android:layout_width="239dp"
+        android:layout_height="27dp"
+        android:text="please enter valid password"
+        android:textColor="#FF0202"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.474" />
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:textColor="@color/white"
         android:backgroundTint="#1b6ec2"
         android:padding="@dimen/size_5_dp"
+        android:text="Login"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.522"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.525" />
+        app:layout_constraintVertical_bias="0.655" />
 
     <TextView
         android:id="@+id/Notregisteryet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register"
+        android:layout_marginStart="140dp"
         android:padding="@dimen/size_5_dp"
-        android:textSize="25dp"
+        android:text="Register"
+        android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.988"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.886" />
+        app:layout_constraintVertical_bias="0.85" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -90,6 +116,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:visibility="gone"/>
+
+    <CheckBox
+        android:id="@+id/ck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remember Me"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.748" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

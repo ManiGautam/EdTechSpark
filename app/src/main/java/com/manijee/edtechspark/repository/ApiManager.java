@@ -12,10 +12,11 @@ public class ApiManager {
     private static ApiManager instance = null;
     private static Api myApi;
     public CreateUserRequestModel createUserRequestModel;
+
     private ApiManager() {
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
-        OkHttpClient httpClient=new OkHttpClient.Builder().addInterceptor(logging).build();
+        OkHttpClient httpClient = new OkHttpClient.Builder().addInterceptor(logging).build();
         Retrofit retrofit = new Retrofit.Builder().baseUrl(Api.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(httpClient)

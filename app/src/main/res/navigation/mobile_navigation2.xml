@@ -7,15 +7,15 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.manijee.edtechspark.views.activities.ui.home.HomeFragment"
+        android:name="com.manijee.edtechspark.views.activities.ui.My_Courses.CourseFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_mycourses" />
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.manijee.edtechspark.views.activities.ui.gallery.GalleryFragment"
+        android:name="com.manijee.edtechspark.views.activities.ui.Dashboard.DashboardFragment"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/nav_slideshow"

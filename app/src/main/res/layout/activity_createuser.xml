@@ -33,10 +33,10 @@
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.382"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.926" />
+        app:layout_constraintVertical_bias="0.946" />
 
     <EditText
         android:id="@+id/edtName"
@@ -57,61 +57,102 @@
         android:id="@+id/edtEmail"
         android:layout_width="241dp"
         android:layout_height="47dp"
+        android:background="@drawable/edtstyle"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        android:background="@drawable/edtstyle"
         android:padding="@dimen/size_5_dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.374" />
+        app:layout_constraintVertical_bias="0.327" />
+
+    <TextView
+        android:id="@+id/edtplsremail"
+        android:layout_width="239dp"
+        android:layout_height="27dp"
+        android:text="please enter valid email"
+        android:textColor="#FF0202"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.398" />
+
 
     <EditText
         android:id="@+id/edtPassword"
         android:layout_width="241dp"
         android:layout_height="47dp"
+        android:background="@drawable/edtstyle"
         android:hint="Password"
         android:inputType="textPassword"
-        android:background="@drawable/edtstyle"
         android:padding="@dimen/size_5_dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.46" />
+
+    <TextView
+        android:id="@+id/edtplsrpassword"
+        android:layout_width="239dp"
+        android:layout_height="27dp"
+        android:text="please enter valid password"
+        android:textColor="#FF0202"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.523" />
 
     <EditText
         android:id="@+id/edtConfirmPassword"
         android:layout_width="241dp"
         android:layout_height="47dp"
-        android:hint="Confirm Password"
         android:background="@drawable/edtstyle"
-        android:padding="@dimen/size_5_dp"
+        android:hint="Confirm Password"
         android:inputType="textPassword"
+        android:padding="@dimen/size_5_dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.616" />
+        app:layout_constraintVertical_bias="0.585" />
 
     <EditText
         android:id="@+id/edtContact"
         android:layout_width="241dp"
         android:layout_height="47dp"
-        android:hint="Contact"
         android:background="@drawable/edtstyle"
-        android:padding="@dimen/size_5_dp"
+        android:hint="Contact"
         android:inputType="number"
         android:maxLength="12"
+        android:padding="@dimen/size_5_dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.733" />
+        app:layout_constraintVertical_bias="0.681" />
+
+    <TextView
+        android:id="@+id/edtplsrcontact"
+        android:layout_width="239dp"
+        android:layout_height="27dp"
+        android:text="please enter valid contact"
+        android:textColor="#FF0202"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.747" />
 
     <Button
         android:id="@+id/btnRegister"
@@ -123,10 +164,10 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintHorizontal_bias="0.363"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.828" />
+        app:layout_constraintVertical_bias="0.865" />
 
     <ProgressBar
         android:id="@+id/progressBar"

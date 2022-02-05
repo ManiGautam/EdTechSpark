@@ -1,4 +1,4 @@
-package com.manijee.edtechspark.views.activities;
+package com.manijee.edtechspark.common;
 import android.content.Context;
 import android.content.SharedPreferences;
 

@@ -1,4 +1,4 @@
-package com.manijee.edtechspark.views.activities.ui.home;
+package com.manijee.edtechspark.views.activities.ui.My_Courses;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,23 +12,23 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.manijee.edtechspark.databinding.FragmentHomeBinding;
+import com.manijee.edtechspark.databinding.FragmentMycoursesBinding;
 
-public class HomeFragment extends Fragment {
+public class CourseFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
-    private FragmentHomeBinding binding;
+    private CourseViewModel courseViewModel;
+    private FragmentMycoursesBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+        courseViewModel =
+                new ViewModelProvider(this).get(CourseViewModel.class);
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        binding = FragmentMycoursesBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        courseViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

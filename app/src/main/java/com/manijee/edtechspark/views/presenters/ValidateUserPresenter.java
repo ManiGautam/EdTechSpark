@@ -1,6 +1,7 @@
 package com.manijee.edtechspark.views.presenters;
 
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.Patterns;
 import android.widget.EditText;
 
@@ -12,33 +13,35 @@ import com.manijee.edtechspark.repository.ValidateUserListener;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
 public class ValidateUserPresenter {
 
-    public boolean ValidateEmail(EditText edt){
-        if (!TextUtils.isEmpty(edt.getText().toString())&& Patterns.EMAIL_ADDRESS.matcher(edt.getText().toString()).matches()){
+    public boolean ValidateEmail(EditText edt) {
+        if (!TextUtils.isEmpty(edt.getText().toString()) && Patterns.EMAIL_ADDRESS.matcher(edt.getText().toString()).matches()) {
             return true;
-        }else{
-            return  false;
+        } else {
+            return false;
         }
     }
 
-    public boolean ValidatePassword(EditText edt){
-        if (!TextUtils.isEmpty(edt.getText().toString())){
+    public boolean ValidatePassword(EditText edt) {
+        if (!TextUtils.isEmpty(edt.getText().toString())) {
             return true;
-        }else{
-            return  false;
+        } else {
+            return false;
         }
     }
 
-    public void validateUser(ValidateUserListener listener, ValidateUserRequestModel user){
+    public void validateUser(ValidateUserListener listener, ValidateUserRequestModel user) {
         Call<ValidateUserResponsemodel> call = ApiManager.getInstance().getMyApi().validateUser(user);
         call.enqueue(new Callback<ValidateUserResponsemodel>() {
 
             @Override
             public void onResponse(Call<ValidateUserResponsemodel> call, Response<ValidateUserResponsemodel> response) {
-                if (response.code() == 200){
+                Log.i("validate_response","code"+response.code()+"body"+response.message());
+                if (response.code() == 200) {
                     listener.onValidateUserSuccess(response);
-                }else {
+                } else {
                     listener.onValidateUserFail("Could not Validate your Details,Please try again later" + response.code() + ":" + response.message());
                 }
             }

@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".views.activities.ui.slideshow.SlideshowFragment">
 
+
+
     <TextView
         android:id="@+id/text_slideshow"
         android:layout_width="match_parent"

@@ -14,9 +14,12 @@
         android:usesCleartextTraffic="true" >
         <activity
             android:name=".views.activities.MainActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/title_activity_main"
-            android:theme="@style/Theme.EdTechSpark.NoActionBar" />
+            android:theme="@style/Theme.EdTechSpark.NoActionBar">
+
+        </activity>
+
         <activity
             android:name=".views.activities.SplashScreen"
             android:exported="true">

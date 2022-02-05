@@ -15,36 +15,38 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class CreateUserPresenter {
-    public boolean ValidateEmail(EditText edt){
-        if (!TextUtils.isEmpty(edt.getText().toString())&& Patterns.EMAIL_ADDRESS.matcher(edt.getText().toString()).matches()){
+    public boolean ValidateEmail(EditText edt) {
+        if (!TextUtils.isEmpty(edt.getText().toString()) && Patterns.EMAIL_ADDRESS.matcher(edt.getText().toString()).matches()) {
             return true;
-        }else{
-            return  false;
+        } else {
+            return false;
         }
     }
 
-    public boolean ValidatePassword(EditText edt){
-        if (!TextUtils.isEmpty(edt.getText().toString())){
+    public boolean ValidatePassword(EditText edt) {
+        if (!TextUtils.isEmpty(edt.getText().toString())) {
             return true;
-        }else{
-            return  false;
+        } else {
+            return false;
         }
     }
-    public boolean ValidateContact(EditText edt){
-        if (!TextUtils.isEmpty(edt.getText().toString())&& Patterns.PHONE.matcher(edt.getText().toString()).matches()){
+
+    public boolean ValidateContact(EditText edt) {
+        if (!TextUtils.isEmpty(edt.getText().toString()) && Patterns.PHONE.matcher(edt.getText().toString()).matches()) {
             return true;
-        }else{
-            return  false;
+        } else {
+            return false;
         }
     }
+
     public void createUser(CreateUserListener listener, CreateUserRequestModel user) {
         Call<ResponseBody> call = ApiManager.getInstance().getMyApi().createUser(user);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                Log.i("http_response", String.valueOf(response.code())+"message:"+response.message()+"body:"+response.body());
+                Log.i("http_response", String.valueOf(response.code()) + "message:" + response.message() + "body:" + response.body());
                 if (response.code() == 201) {
-                  listener.onCreateUserSuccess(response);
+                    listener.onCreateUserSuccess(response);
                 } else {
                     listener.onCreateUserFail("Could not register,Please try again later" + response.code() + ":" + response.message());
 
