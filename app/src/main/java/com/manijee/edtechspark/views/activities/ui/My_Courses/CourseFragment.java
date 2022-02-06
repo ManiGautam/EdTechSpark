@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,30 +11,50 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.manijee.edtechspark.common.PreferenceManager;
 import com.manijee.edtechspark.databinding.FragmentMycoursesBinding;
+import com.manijee.edtechspark.model.SubscibedCourseResponseModel;
 
 public class CourseFragment extends Fragment {
 
     private CourseViewModel courseViewModel;
     private FragmentMycoursesBinding binding;
+//RecyclerView recyclerView;
 
+    SubscibedCourseResponseModel subscibedCourseResponseModel;
+PreferenceManager preferenceManager;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+        preferenceManager = new PreferenceManager();
         courseViewModel =
                 new ViewModelProvider(this).get(CourseViewModel.class);
 
+       // recyclerView = binding.courseviwers;
         binding = FragmentMycoursesBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
+       // final TextView textView = binding.textHome;
         courseViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
-                textView.setText(s);
+                //textView.setText(s);
             }
         });
+        courseViewModel.getSubcibedCourseList("45646");
+//        courseViewModel.courselist.observe(getViewLifecycleOwner(), new Observer<List<SubscibedCourseResponseModel>>() {
+//            @Override
+//            public void onChanged(List<SubscibedCourseResponseModel> subscibedCourseResponseModels) {
+//                for (SubscibedCourseResponseModel course:subscibedCourseResponseModels){
+//
+//                    Log.i("Course Name",course.getName());
+//
+//                }
+//            }
+//        });
         return root;
     }
+
+
 
     @Override
     public void onDestroyView() {

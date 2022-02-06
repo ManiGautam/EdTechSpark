@@ -25,6 +25,11 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+    <style name="btnbg" parent="Widget.AppCompat.Button">
+      <item name="background">@drawable/border</item>
+       <item name="android:textColor">#007bff</item>
+    </style>
+
     <style name="Theme.EdTechSpark.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Theme.EdTechSpark.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 

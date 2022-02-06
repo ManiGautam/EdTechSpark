@@ -131,6 +131,7 @@ public class LoginPage extends AppCompatActivity implements ValidateUserListener
     @Override
     public void onValidateUserSuccess(Response response) {
         preferenceManager.setInfo("email", validateUserResponsemodel.email);
+        preferenceManager.setInfo("id", String.valueOf(validateUserResponsemodel.id));
         preferenceManager.setInfo("name", validateUserResponsemodel.name);
         preferenceManager.setInfo("token",validateUserResponsemodel.token);
         progressBar.setVisibility(View.GONE);

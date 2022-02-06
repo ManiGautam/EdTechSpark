@@ -1,10 +1,8 @@
 package com.manijee.edtechspark.views.activities;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -23,17 +21,13 @@ import com.manijee.edtechspark.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity{
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
-    TextView name,email;
-    String Name,Email;
     PreferenceManager preferenceManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
         preferenceManager = new PreferenceManager();
-
 
         setSupportActionBar(binding.appBarMain.toolbar);
         binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
@@ -45,7 +39,6 @@ public class MainActivity extends AppCompatActivity{
         });
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
-        String txt = "dsfds";
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -55,22 +48,7 @@ public class MainActivity extends AppCompatActivity{
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-        if (drawer.isOpen()){
 
-      name = findViewById(R.id.name);
-
-        Name =  preferenceManager.getInfo("name");
-            Log.i("shared",""+preferenceManager.getInfo("name"));
-        name.setText(txt);
-
-        email = findViewById(R.id.email);
-
-        Email =  preferenceManager.getInfo("email");
-
-        email.setText("Email");
-
-
-        }
     }
 
     @Override

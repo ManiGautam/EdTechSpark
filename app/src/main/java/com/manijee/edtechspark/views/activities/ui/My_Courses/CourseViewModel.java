@@ -1,13 +1,24 @@
 package com.manijee.edtechspark.views.activities.ui.My_Courses;
 
+import android.os.AsyncTask;
+import android.util.Log;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class CourseViewModel extends ViewModel {
+import com.manijee.edtechspark.model.SubscibedCourseResponseModel;
+import com.manijee.edtechspark.repository.CourseListener;
+import com.manijee.edtechspark.views.presenters.SubcribedCoursePresenter;
+
+import java.util.List;
+
+import retrofit2.Response;
+
+public class CourseViewModel extends ViewModel implements CourseListener {
 
     private MutableLiveData<String> mText;
-
+public MutableLiveData<List<SubscibedCourseResponseModel>> courselist;
     public CourseViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is home fragment");
@@ -15,5 +26,32 @@ public class CourseViewModel extends ViewModel {
 
     public LiveData<String> getText() {
         return mText;
+    }
+    public void getSubcibedCourseList(String UserId){
+    new MyAsyncTask().doInBackground(UserId);
+    }
+
+    @Override
+    public void onSuccess(Response response) {
+        List<SubscibedCourseResponseModel> localcourselist = (List<SubscibedCourseResponseModel>) response.body();
+        courselist.postValue(localcourselist);
+    }
+
+    @Override
+    public void onFail(String msg) {
+        Log.i("error to fetch course",""+msg);
+    }
+
+    class MyAsyncTask extends AsyncTask<String,Void,Void> {
+
+
+
+        @Override
+        protected Void doInBackground(String... strings) {
+            SubcribedCoursePresenter subcribedCoursePresenter = new SubcribedCoursePresenter();
+
+            subcribedCoursePresenter.getSubscribedCourseByUserId(CourseViewModel.this,strings[0]);
+            return null;
+        }
     }
 }

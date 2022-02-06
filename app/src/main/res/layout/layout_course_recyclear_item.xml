@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/recyclerCard"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:background="@android:drawable/edit_text"
+    android:padding="15dp">
+
+
+    <ImageView
+        android:id="@+id/coursepic"
+        android:layout_width="242dp"
+        android:layout_height="112dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:src="@drawable/side_nav_bar"/>
+
+    <TextView
+        android:id="@+id/coursename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C# FOR BEGINNERS"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.007"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/coursepic"
+        app:layout_constraintVertical_bias="0.066" />
+
+    <TextView
+        android:id="@+id/courseprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="₹1000"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.993"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.501" />
+
+    <TextView
+        android:id="@+id/coursedecripstion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Learn C# from scratch by doing hands-on labs and building projects."
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.724" />
+
+    <TextView
+        android:id="@+id/courselevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Level:Beginner"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.015"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/coursedecripstion"
+        app:layout_constraintVertical_bias="0.733" />
+
+    <TextView
+        android:id="@+id/courseaddtocart"
+        android:layout_width="97dp"
+        android:layout_height="29dp"
+        android:background="@drawable/border"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text=" Add To Cart"
+        android:textColor="#007bff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/courseprice"
+        app:layout_constraintVertical_bias="0.858" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
