@@ -1,8 +1,8 @@
 package com.manijee.edtechspark.repository;
 
 
-import com.manijee.edtechspark.views.activities.ui.My_Courses.CourseFragment;
+import com.manijee.edtechspark.model.SubscibedCourseResponseModel;
 
 public interface RecyclerItemOnClickListener {
-    void onItemClick(CourseFragment course);
+    void onItemClick(SubscibedCourseResponseModel course);
 }

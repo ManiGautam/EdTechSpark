@@ -11,4 +11,9 @@
     <string name="menu_home">My Courses</string>
     <string name="menu_gallery">Dashboard</string>
     <string name="menu_slideshow">My Orders</string>
+    <string name="Id">Id</string>
+    <string name="Payment"><b>Payment Id</b></string>
+    <string name="Created"><b>Created Date</b></string>
+    <string name="Detail"><b>Detail</b></string>
+    <string name="Action"><b>Action</b></string>
 </resources>

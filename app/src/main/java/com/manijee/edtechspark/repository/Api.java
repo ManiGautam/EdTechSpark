@@ -27,7 +27,7 @@ public interface Api {
     @POST("api/Auth/ValidateUser")
     Call<ValidateUserResponsemodel> validateUser(@Body ValidateUserRequestModel userRequestModel);
 
-    @GET("api/Course/GetSubscribedCourses")
+    @GET("api/Course/GetSubscribedCourses/{UserId}")
     Call<List<SubscibedCourseResponseModel>> getsubscibedcoursesbyuserid(@Path("UserId") String UserId);
 
     @POST("api/Cart/SaveCart")

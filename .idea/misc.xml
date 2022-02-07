@@ -18,12 +18,15 @@
         <entry key="..\:/Android/EdTechSpark/app/src/main/res/layout/app_bar_main.xml" value="0.25" />
         <entry key="..\:/Android/EdTechSpark/app/src/main/res/layout/content_main.xml" value="0.34701492537313433" />
         <entry key="..\:/Android/EdTechSpark/app/src/main/res/layout/fragment_Dashboard.xml" value="0.275" />
+        <entry key="..\:/Android/EdTechSpark/app/src/main/res/layout/fragment_My_Orders.xml" value="0.3009833262077811" />
         <entry key="..\:/Android/EdTechSpark/app/src/main/res/layout/fragment_dashboard.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/EdTechSpark/app/src/main/res/layout/fragment_gallery.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/EdTechSpark/app/src/main/res/layout/fragment_home.xml" value="0.275" />
         <entry key="..\:/Android/EdTechSpark/app/src/main/res/layout/fragment_mycourses.xml" value="0.36102564102564105" />
+        <entry key="..\:/Android/EdTechSpark/app/src/main/res/layout/fragment_myorders.xml" value="0.29717180244829045" />
         <entry key="..\:/Android/EdTechSpark/app/src/main/res/layout/fragment_slideshow.xml" value="0.75" />
         <entry key="..\:/Android/EdTechSpark/app/src/main/res/layout/layout_course_recyclear_item.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/EdTechSpark/app/src/main/res/layout/myordescard.xml" value="0.3009833262077811" />
         <entry key="..\:/Android/EdTechSpark/app/src/main/res/layout/nav_header_main.xml" value="0.6400580551523948" />
         <entry key="..\:/Android/EdTechSpark/app/src/main/res/menu/activity_main_drawer.xml" value="0.3392857142857143" />
         <entry key="..\:/Android/EdTechSpark/app/src/main/res/menu/main.xml" value="0.275" />

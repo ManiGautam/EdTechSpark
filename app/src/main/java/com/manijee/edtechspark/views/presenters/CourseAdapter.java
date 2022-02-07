@@ -13,16 +13,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.manijee.edtechspark.R;
 import com.manijee.edtechspark.model.SubscibedCourseResponseModel;
 import com.manijee.edtechspark.repository.RecyclerItemOnClickListener;
-import com.manijee.edtechspark.views.activities.ui.My_Courses.CourseFragment;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.MyViewHolder>{
-    List<CourseFragment> courselist;
+    List<SubscibedCourseResponseModel> courselist;
     RecyclerItemOnClickListener listener;
     SubscibedCourseResponseModel subscibedCourseResponseModel;
-    public CourseAdapter(RecyclerItemOnClickListener listener, List<CourseFragment> courselistf){
+    public CourseAdapter(RecyclerItemOnClickListener listener, List<SubscibedCourseResponseModel> courselistf){
         this.listener=listener;
         this.courselist=courselistf;
     }
@@ -36,14 +35,14 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(@NonNull CourseAdapter.MyViewHolder holder, int position) {
-        CourseFragment courseFragment=courselist.get(position);
+        SubscibedCourseResponseModel course = courselist.get(position);
         Picasso.get().load(subscibedCourseResponseModel.getImageUrl()).into(holder.courseimg);
         holder.coursename.setText(subscibedCourseResponseModel.getName());
         holder.coursedescription.setText(subscibedCourseResponseModel.getDescription());
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.onItemClick(courseFragment);
+                listener.onItemClick(course);
             }
         });
     }

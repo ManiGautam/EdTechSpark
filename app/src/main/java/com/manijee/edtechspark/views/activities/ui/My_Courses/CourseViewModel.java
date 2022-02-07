@@ -18,7 +18,7 @@ import retrofit2.Response;
 public class CourseViewModel extends ViewModel implements CourseListener {
 
     private MutableLiveData<String> mText;
-public MutableLiveData<List<SubscibedCourseResponseModel>> courselist;
+public MutableLiveData<List<SubscibedCourseResponseModel>> courselist = new MutableLiveData<>();
     public CourseViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is home fragment");
