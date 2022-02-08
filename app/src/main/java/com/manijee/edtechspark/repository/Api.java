@@ -3,6 +3,7 @@ package com.manijee.edtechspark.repository;
 import com.manijee.edtechspark.model.CartRequestmodel;
 import com.manijee.edtechspark.model.CartSavedErrorResponsemodel;
 import com.manijee.edtechspark.model.CreateUserRequestModel;
+import com.manijee.edtechspark.model.MyOrdersResponseModel;
 import com.manijee.edtechspark.model.SubscibedCourseResponseModel;
 import com.manijee.edtechspark.model.ValidateUserRequestModel;
 import com.manijee.edtechspark.model.ValidateUserResponsemodel;
@@ -29,6 +30,9 @@ public interface Api {
 
     @GET("api/Course/GetSubscribedCourses/{UserId}")
     Call<List<SubscibedCourseResponseModel>> getsubscibedcoursesbyuserid(@Path("UserId") String UserId);
+
+    @GET("api/Order/GetUserOrders")
+    Call<List<MyOrdersResponseModel>> getuserorder(@Path("UserId") String UserId);
 
     @POST("api/Cart/SaveCart")
     Call<CartSavedErrorResponsemodel> SaveCart(@Body CartRequestmodel cartRequestmodel);
@@ -113,9 +117,6 @@ public interface Api {
 
     @DELETE("/api/Mentor/Delete")
     Call<List<CreateUserRequestModel>> deletementor(CreateUserRequestModel createUserRequestModel);
-
-    @GET("api/Order/GetUserOrders")
-    Call<List<CreateUserRequestModel>> getuserorder(CreateUserRequestModel createUserRequestModel);
 
     @GET("api/Order/GetOrderDetails")
     Call<List<CreateUserRequestModel>> getorderdetalis(CreateUserRequestModel createUserRequestModel);

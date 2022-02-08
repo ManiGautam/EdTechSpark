@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/myorderscard"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="5dp">
 
@@ -49,7 +50,7 @@
         app:layout_constraintVertical_bias="0.208">
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/Cretedate"
             android:layout_width="match_parent"
             android:layout_height="49dp"
             android:layout_weight="1"

@@ -54,16 +54,18 @@ PreferenceManager preferenceManager;
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        courseViewModel.getSubcibedCourseList("45646");
+        courseViewModel.getSubcibedCourseList("3");
         courseViewModel.courselist.observe(getViewLifecycleOwner(), new Observer<List<SubscibedCourseResponseModel>>() {
             @Override
             public void onChanged(List<SubscibedCourseResponseModel> subscibedCourseResponseModels) {
                 if (subscibedCourseResponseModels != null){
-                for (SubscibedCourseResponseModel course:subscibedCourseResponseModels){
-                    Log.i("Course Name",course.getName());
+//                for (SubscibedCourseResponseModel course:subscibedCourseResponseModels){
+//                    Log.i("Course Name",course.getName());
+//
+//                }
                     CourseAdapter adapter = new CourseAdapter(CourseFragment.this,subscibedCourseResponseModels);
                     recyclerView.setAdapter(adapter);
-                }
+                    recyclerView.notifyAll();
             }else {
                     Log.i("loding course","course not avalible yet");
                 }

@@ -13,7 +13,7 @@
         android:id="@+id/registerinyouraccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="76dp"
         android:padding="@dimen/size_5_dp"
         android:text="User SigUp"
         android:textColor="@color/black"
@@ -42,16 +42,16 @@
         android:id="@+id/edtName"
         android:layout_width="241dp"
         android:layout_height="47dp"
+        android:background="@drawable/edtstyle"
         android:hint="Name"
         android:inputType="text"
-        android:background="@drawable/edtstyle"
         android:padding="@dimen/size_5_dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.239" />
+        app:layout_constraintVertical_bias="0.236" />
 
     <EditText
         android:id="@+id/edtEmail"
@@ -182,8 +182,8 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="133dp"
-        android:layout_height="112dp"
+        android:layout_width="121dp"
+        android:layout_height="76dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"

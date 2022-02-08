@@ -12,9 +12,12 @@ public class MyOrdersResponseModel {
         public int total;
         public String orderId;
         public String order;
-
-    public MyOrdersResponseModel(int id, int itemId, int unitPrice, int quantity, int total, String orderId, String order) {
+        public String paymentId;
+        public Date createdDate;
+    public MyOrdersResponseModel(int id, String paymentId, Date createdDate,int itemId, int unitPrice, int quantity, int total, String orderId, String order) {
         this.id = id;
+        this.paymentId = paymentId;
+        this.createdDate = createdDate;
         this.itemId = itemId;
         this.unitPrice = unitPrice;
         this.quantity = quantity;
@@ -33,6 +36,21 @@ public class MyOrdersResponseModel {
 
     public int getItemId() {
         return itemId;
+    }
+    public String getPaymentId() {
+        return paymentId;
+    }
+
+    public void setPaymentId(String paymentId) {
+        this.paymentId = paymentId;
+    }
+
+    public Date getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
     }
 
     public void setItemId(int itemId) {
@@ -85,11 +103,10 @@ public class MyOrdersResponseModel {
     public String paymentId;
     public Date createdDate;
     public ArrayList<MyOrdersResponseModel> orderItems;
-        public UserDetails(String id, int userId, String paymentId, Date createdDate, ArrayList<MyOrdersResponseModel> orderItems) {
+        public UserDetails(String id, int userId,  ArrayList<MyOrdersResponseModel> orderItems) {
             this.id = id;
             this.userId = userId;
-            this.paymentId = paymentId;
-            this.createdDate = createdDate;
+
             this.orderItems = orderItems;
         }
 
@@ -109,21 +126,6 @@ public class MyOrdersResponseModel {
             this.userId = userId;
         }
 
-        public String getPaymentId() {
-            return paymentId;
-        }
-
-        public void setPaymentId(String paymentId) {
-            this.paymentId = paymentId;
-        }
-
-        public Date getCreatedDate() {
-            return createdDate;
-        }
-
-        public void setCreatedDate(Date createdDate) {
-            this.createdDate = createdDate;
-        }
 
         public ArrayList<MyOrdersResponseModel> getOrderItems() {
             return orderItems;
