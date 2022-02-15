@@ -1,8 +1,9 @@
 package com.manijee.edtechspark.repository;
 
 
-import com.manijee.edtechspark.model.SubscibedCourseResponseModel;
+import java.util.List;
 
-public interface RecyclerItemOnClickListener {
-    void onItemClick(SubscibedCourseResponseModel course);
+public interface RecyclerItemOnClickListener <T> {
+    void onItemClick(List<T> item);
+
 }

@@ -5,15 +5,15 @@ import java.util.Date;
 
 public class MyOrdersResponseModel {
 
-        public int id;
-        public int itemId;
-        public int unitPrice;
-        public int quantity;
-        public int total;
-        public String orderId;
-        public String order;
-        public String paymentId;
-        public Date createdDate;
+    private int id;
+    private int itemId;
+    private int unitPrice;
+    private int quantity;
+    private int total;
+    private String orderId;
+    private String order;
+    private String paymentId;
+    private Date createdDate;
     public MyOrdersResponseModel(int id, String paymentId, Date createdDate,int itemId, int unitPrice, int quantity, int total, String orderId, String order) {
         this.id = id;
         this.paymentId = paymentId;
@@ -98,11 +98,11 @@ public class MyOrdersResponseModel {
     }
 }
     class UserDetails{
-    public String id;
-    public int userId;
-    public String paymentId;
-    public Date createdDate;
-    public ArrayList<MyOrdersResponseModel> orderItems;
+        private String id;
+        private int userId;
+        private String paymentId;
+        private Date createdDate;
+        private ArrayList<MyOrdersResponseModel> orderItems;
         public UserDetails(String id, int userId,  ArrayList<MyOrdersResponseModel> orderItems) {
             this.id = id;
             this.userId = userId;

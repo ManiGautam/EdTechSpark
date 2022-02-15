@@ -18,7 +18,7 @@ public class MyOrdersPresenter {
     call.enqueue(new Callback<List<MyOrdersResponseModel>>() {
         @Override
         public void onResponse(Call<List<MyOrdersResponseModel>> call, Response<List<MyOrdersResponseModel>> response) {
-            Log.i("response code", "" + response.code() + response.message());
+            Log.i("response code", "" + response.body().get(0).getOrderId());
             if (response.code() == 200) {
                 listener.onSuccess(response);
             } else {

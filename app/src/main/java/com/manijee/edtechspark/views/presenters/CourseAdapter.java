@@ -15,6 +15,7 @@ import com.manijee.edtechspark.model.SubscibedCourseResponseModel;
 import com.manijee.edtechspark.repository.RecyclerItemOnClickListener;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.MyViewHolder>{
@@ -42,7 +43,9 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.MyViewHold
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.onItemClick(course);
+             ArrayList list = new ArrayList<SubscibedCourseResponseModel>();
+             list.add(course);
+                listener.onItemClick(list);
             }
         });
     }

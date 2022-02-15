@@ -31,7 +31,7 @@ public interface Api {
     @GET("api/Course/GetSubscribedCourses/{UserId}")
     Call<List<SubscibedCourseResponseModel>> getsubscibedcoursesbyuserid(@Path("UserId") String UserId);
 
-    @GET("api/Order/GetUserOrders")
+    @GET("api/Order/GetUserOrders/{UserId}")
     Call<List<MyOrdersResponseModel>> getuserorder(@Path("UserId") String UserId);
 
     @POST("api/Cart/SaveCart")

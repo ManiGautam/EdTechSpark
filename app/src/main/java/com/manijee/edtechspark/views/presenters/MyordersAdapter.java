@@ -13,12 +13,12 @@ import com.manijee.edtechspark.R;
 import com.manijee.edtechspark.model.MyOrdersResponseModel;
 import com.manijee.edtechspark.repository.RecyclerItemOnClickListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MyordersAdapter extends RecyclerView.Adapter<MyordersAdapter.MyViewHolder>{
     List<MyOrdersResponseModel> orderslist;
     RecyclerItemOnClickListener listener;
-    MyOrdersResponseModel myOrdersResponseModel;
     public MyordersAdapter(RecyclerItemOnClickListener listener, List<MyOrdersResponseModel> myorders){
         this.listener=listener;
         this.orderslist=myorders;
@@ -32,12 +32,19 @@ public class MyordersAdapter extends RecyclerView.Adapter<MyordersAdapter.MyView
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyordersAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         MyOrdersResponseModel order = orderslist.get(position);
-        holder.orderid.setText(myOrdersResponseModel.getOrderId());
-        holder.paymentid.setText(myOrdersResponseModel.getPaymentId());
-        holder.createddate.setText((CharSequence) myOrdersResponseModel.getCreatedDate());
-
+        holder.orderid.setText(order.getOrderId());
+        holder.paymentid.setText(order.getPaymentId());
+        holder.createddate.setText((CharSequence) order.getCreatedDate());
+holder.card.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        ArrayList list = new ArrayList<MyOrdersResponseModel>();
+        list.add(order);
+        listener.onItemClick(list);
+    }
+});
     }
 
 

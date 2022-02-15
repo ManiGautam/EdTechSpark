@@ -80,8 +80,9 @@ PreferenceManager preferenceManager;
         binding = null;
     }
 
+
     @Override
-    public void onItemClick(SubscibedCourseResponseModel course) {
+    public void onItemClick(List item) {
 
     }
 }

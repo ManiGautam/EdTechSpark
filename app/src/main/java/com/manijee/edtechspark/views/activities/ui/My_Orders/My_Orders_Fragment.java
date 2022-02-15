@@ -1,6 +1,7 @@
 package com.manijee.edtechspark.views.activities.ui.My_Orders;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,11 +16,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.manijee.edtechspark.databinding.FragmentMyordersBinding;
 import com.manijee.edtechspark.model.MyOrdersResponseModel;
+import com.manijee.edtechspark.repository.RecyclerItemOnClickListener;
+import com.manijee.edtechspark.views.presenters.MyordersAdapter;
 
 import java.util.List;
 
 
-public class My_Orders_Fragment extends Fragment {
+public class My_Orders_Fragment extends Fragment implements RecyclerItemOnClickListener {
 
     private My_Orders_ViewModel myOrdersViewModel;
     List<MyOrdersResponseModel> orderslist;
@@ -48,12 +51,32 @@ public class My_Orders_Fragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        //myOrdersViewModel.getordersbyuserid("52225");
+        myOrdersViewModel.getordersbyuserid("3");
+        myOrdersViewModel.orderslist.observe(getViewLifecycleOwner(), new Observer<List<MyOrdersResponseModel>>() {
+            @Override
+            public void onChanged(List<MyOrdersResponseModel> myOrdersResponseModels) {
+                if (myOrdersResponseModels != null) {
+//                for (MyOrdersResponseModel orders:myOrdersResponseModels){
+//
+//                }
+                    MyordersAdapter myordersAdapter = new MyordersAdapter(My_Orders_Fragment.this,myOrdersResponseModels);
+                    recyclerView.setAdapter(myordersAdapter);
+                } else {
+                    Log.i("orders", "orders not avalible yet");
+                }
+            }
+        });
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+
+    @Override
+    public void onItemClick(List item) {
+
     }
 }
