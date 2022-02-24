@@ -18,7 +18,7 @@ import retrofit2.Response;
 public class CourseViewModel extends ViewModel implements CourseListener {
 
     private MutableLiveData<String> mText;
-public MutableLiveData<List<SubscibedCourseResponseModel>> courselist = new MutableLiveData<>();
+    public MutableLiveData<List<SubscibedCourseResponseModel>> courselist = new MutableLiveData<>();
     public CourseViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is home fragment");
@@ -32,9 +32,9 @@ public MutableLiveData<List<SubscibedCourseResponseModel>> courselist = new Muta
     }
 
     @Override
-    public void onSuccess(Response response) {
-        List<SubscibedCourseResponseModel> localcourselist = (List<SubscibedCourseResponseModel>) response.body();
-        courselist.postValue(localcourselist);
+    public void onSuccess(List<SubscibedCourseResponseModel> localcourselist) {
+        Log.i("obtained_records",localcourselist.get(0).getName()+","+localcourselist.get(0).getName());
+        courselist.setValue(localcourselist);
     }
 
     @Override
@@ -43,8 +43,6 @@ public MutableLiveData<List<SubscibedCourseResponseModel>> courselist = new Muta
     }
 
     class MyAsyncTask extends AsyncTask<String,Void,Void> {
-
-
 
         @Override
         protected Void doInBackground(String... strings) {

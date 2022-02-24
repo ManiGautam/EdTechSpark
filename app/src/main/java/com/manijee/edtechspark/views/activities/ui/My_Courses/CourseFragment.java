@@ -26,10 +26,10 @@ public class CourseFragment extends Fragment implements RecyclerItemOnClickListe
 
     private CourseViewModel courseViewModel;
     private FragmentMycoursesBinding binding;
-RecyclerView recyclerView;
+    RecyclerView recyclerView;
     List<SubscibedCourseResponseModel> courselist;
     SubscibedCourseResponseModel subscibedCourseResponseModel;
-PreferenceManager preferenceManager;
+    PreferenceManager preferenceManager;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         preferenceManager = new PreferenceManager();
@@ -59,13 +59,9 @@ PreferenceManager preferenceManager;
             @Override
             public void onChanged(List<SubscibedCourseResponseModel> subscibedCourseResponseModels) {
                 if (subscibedCourseResponseModels != null){
-//                for (SubscibedCourseResponseModel course:subscibedCourseResponseModels){
-//                    Log.i("Course Name",course.getName());
-//
-//                }
                     CourseAdapter adapter = new CourseAdapter(CourseFragment.this,subscibedCourseResponseModels);
                     recyclerView.setAdapter(adapter);
-                    recyclerView.notifyAll();
+                    //recyclerView.notifyAll();
             }else {
                     Log.i("loding course","course not avalible yet");
                 }

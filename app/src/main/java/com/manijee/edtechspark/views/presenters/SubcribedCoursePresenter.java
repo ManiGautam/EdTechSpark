@@ -18,17 +18,20 @@ public class SubcribedCoursePresenter {
         call.enqueue(new Callback<List<SubscibedCourseResponseModel>>() {
             @Override
             public void onResponse(Call<List<SubscibedCourseResponseModel>> call, Response<List<SubscibedCourseResponseModel>> response) {
-                Log.i("response code", ""+response.body().get(0).getName());
-                if (response.code() == 200) {
-                    listener.onSuccess(response);
-                } else {
+                //Log.i("response code", ""+response.body().get(0).getName());
+                if (response.isSuccessful()){
+                if(response.code() == 200) {
+                    List<SubscibedCourseResponseModel> localcourselist =response.body();
+                    listener.onSuccess(localcourselist);
+                }
+                }else {
                     listener.onFail("Error Accurd please try again later" + response.code());
                 }
             }
 
             @Override
             public void onFailure(Call<List<SubscibedCourseResponseModel>> call, Throwable t) {
-                listener.onFail("error");
+                listener.onFail("error:"+t.getMessage()+",cause:"+t.getCause());
             }
         });
     }

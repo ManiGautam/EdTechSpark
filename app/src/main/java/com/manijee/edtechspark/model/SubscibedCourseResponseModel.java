@@ -14,8 +14,8 @@ public class SubscibedCourseResponseModel {
     private String url;
     private int unitPrice;
     private int difficultyType;
-    private Date createdDate;
-    private Date updatedDate;
+    private String createdDate;
+    private String updatedDate;
     private boolean isActive;
     private int categoryId;
     private int mentorId;
@@ -105,19 +105,19 @@ public class SubscibedCourseResponseModel {
         this.difficultyType = difficultyType;
     }
 
-    public Date getCreatedDate() {
+    public String getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(Date createdDate) {
+    public void setCreatedDate(String createdDate) {
         this.createdDate = createdDate;
     }
 
-    public Date getUpdatedDate() {
+    public String getUpdatedDate() {
         return updatedDate;
     }
 
-    public void setUpdatedDate(Date updatedDate) {
+    public void setUpdatedDate(String updatedDate) {
         this.updatedDate = updatedDate;
     }
 
@@ -238,8 +238,8 @@ public class SubscibedCourseResponseModel {
      private boolean isPreview;
      private boolean isActive;
      private int courseTopicId;
-     private Date createdDate;
-     private Date updatedDate;
+     private String createdDate;
+     private String updatedDate;
      private String courseTopic;
 
 }
@@ -347,7 +347,7 @@ public class SubscibedCourseResponseModel {
     private String password;
     private String phoneNumber;
     private boolean emailConfirmed;
-    private Date createdDate;
+    private String createdDate;
     private ArrayList<String> subscriptions;
     private ArrayList<Role> roles;
 
@@ -391,11 +391,11 @@ public class SubscibedCourseResponseModel {
          this.emailConfirmed = emailConfirmed;
      }
 
-     public Date getCreatedDate() {
+     public String getCreatedDate() {
          return createdDate;
      }
 
-     public void setCreatedDate(Date createdDate) {
+     public void setCreatedDate(String createdDate) {
          this.createdDate = createdDate;
      }
 
@@ -419,7 +419,7 @@ public class SubscibedCourseResponseModel {
  class Subscription{
     private int id;
     private int userId;
-    private Date subscribedOn;
+    private String subscribedOn;
     private int courseId;
     private String course;
     private User user;
@@ -440,11 +440,11 @@ public class SubscibedCourseResponseModel {
          this.userId = userId;
      }
 
-     public Date getSubscribedOn() {
+     public String getSubscribedOn() {
          return subscribedOn;
      }
 
-     public void setSubscribedOn(Date subscribedOn) {
+     public void setSubscribedOn(String subscribedOn) {
          this.subscribedOn = subscribedOn;
      }
 

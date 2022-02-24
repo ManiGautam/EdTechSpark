@@ -1,5 +1,7 @@
 package com.manijee.edtechspark.views.presenters;
 
+import android.text.Html;
+import android.text.Spanned;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,7 +41,8 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.MyViewHold
         SubscibedCourseResponseModel course = courselist.get(position);
         Picasso.get().load(course.getImageUrl()).into(holder.courseimg);
         holder.coursename.setText(course.getName());
-        holder.coursedescription.setText(course.getDescription());
+        Spanned htmlSpanned= Html.fromHtml(course.getDescription());
+        holder.coursedescription.setText(htmlSpanned);
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
