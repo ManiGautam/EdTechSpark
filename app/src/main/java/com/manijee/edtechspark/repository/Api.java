@@ -1,5 +1,6 @@
 package com.manijee.edtechspark.repository;
 
+import com.manijee.edtechspark.model.AllCoursesresponsemodel;
 import com.manijee.edtechspark.model.CartRequestmodel;
 import com.manijee.edtechspark.model.CartSavedErrorResponsemodel;
 import com.manijee.edtechspark.model.CreateUserRequestModel;
@@ -34,6 +35,9 @@ public interface Api {
     @GET("api/Order/GetUserOrders/{UserId}")
     Call<List<MyOrdersResponseModel>> getuserorder(@Path("UserId") String UserId);
 
+    @GET("api/Course/GetAll")
+    Call<List<AllCoursesresponsemodel>> getAllCourses();
+
     @POST("api/Cart/SaveCart")
     Call<CartSavedErrorResponsemodel> SaveCart(@Body CartRequestmodel cartRequestmodel);
 
@@ -48,9 +52,6 @@ public interface Api {
 
     @POST("api/Category/Add")
     Call<List<CreateUserRequestModel>> addCategory(CreateUserRequestModel createUserRequestModel);
-
-    @GET("api/Course/GetAll")
-    Call<List<CreateUserRequestModel>> getAllCourses(CreateUserRequestModel createUserRequestModel);
 
     @GET("api/Course/Get")
     Call<List<CreateUserRequestModel>> getCoureswithCategory(CreateUserRequestModel createUserRequestModel);

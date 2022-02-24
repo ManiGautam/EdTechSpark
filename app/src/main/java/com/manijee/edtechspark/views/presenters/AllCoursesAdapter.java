@@ -1,7 +1,5 @@
 package com.manijee.edtechspark.views.presenters;
 
-import android.text.Html;
-import android.text.Spanned;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,18 +11,18 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.manijee.edtechspark.R;
-import com.manijee.edtechspark.model.SubscibedCourseResponseModel;
+import com.manijee.edtechspark.model.AllCoursesresponsemodel;
 import com.manijee.edtechspark.repository.RecyclerItemOnClickListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.MyViewHolder>{
-    List<SubscibedCourseResponseModel> courselist;
+public class AllCoursesAdapter extends RecyclerView.Adapter<AllCoursesAdapter.MyViewHolder>{
+    List<AllCoursesresponsemodel> courselist;
     RecyclerItemOnClickListener listener;
 
-    public CourseAdapter(RecyclerItemOnClickListener listener, List<SubscibedCourseResponseModel> courselistf){
+    public AllCoursesAdapter(RecyclerItemOnClickListener listener, List<AllCoursesresponsemodel> courselistf){
         this.listener=listener;
         this.courselist=courselistf;
     }
@@ -37,17 +35,16 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.MyViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CourseAdapter.MyViewHolder holder, int position) {
-        SubscibedCourseResponseModel course = courselist.get(position);
-        Picasso.get().load("assets/images/csharp.png").into(holder.courseimg);
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        AllCoursesresponsemodel course = courselist.get(position);
+        Picasso.get().load(course.getImageUrl()).into(holder.courseimg);
         holder.coursename.setText(course.getName());
-        Spanned htmlSpanned= Html.fromHtml(course.getSummary());
-        holder.coursedescription.setText(htmlSpanned);
+        holder.coursedescription.setText(course.getSummary());
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-             ArrayList list = new ArrayList<SubscibedCourseResponseModel>();
-             list.add(course);
+                ArrayList list = new ArrayList<AllCoursesresponsemodel>();
+                list.add(course);
                 listener.onItemClick(list);
             }
         });
@@ -58,7 +55,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.MyViewHold
     }
     class MyViewHolder extends RecyclerView.ViewHolder{
         ImageView courseimg;
-        TextView  coursename;
+        TextView coursename;
         TextView  coursedescription;
         TextView  courseprice;
         ConstraintLayout card;
