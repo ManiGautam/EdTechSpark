@@ -3,11 +3,12 @@ package com.manijee.edtechspark.model;
 import java.util.ArrayList;
 
 public class CartSavedErrorResponsemodel {
-        public String type;
-        public String title;
-        public int status;
-        public String traceId;
-        public Errors errors;
+    public String type;
+    public String title;
+    public int status;
+    public String traceId;
+    public Errors errors;
+
     public CartSavedErrorResponsemodel(String type, String title, int status, String traceId, Errors errors) {
         this.type = type;
         this.title = title;
@@ -55,55 +56,57 @@ public class CartSavedErrorResponsemodel {
     public void setErrors(Errors errors) {
         this.errors = errors;
     }
-}
- class Errors{
-    public ArrayList<String> cart;
-    public ArrayList<String> cartItems0Cart;
 
-public ArrayList<Cart> errors;
+    public class Errors {
+        public ArrayList<String> cart;
+        public ArrayList<String> cartItems0Cart;
 
-     public Errors(ArrayList<String> cart, ArrayList<String> cartItems0Cart, ArrayList<Cart> errors) {
-         this.cart = cart;
-         this.cartItems0Cart = cartItems0Cart;
-         this.errors = errors;
-     }
+        public ArrayList<Cart> errors;
 
-     public ArrayList<String> getCart() {
-         return cart;
-     }
+        public Errors(ArrayList<String> cart, ArrayList<String> cartItems0Cart, ArrayList<Cart> errors) {
+            this.cart = cart;
+            this.cartItems0Cart = cartItems0Cart;
+            this.errors = errors;
+        }
 
-     public void setCart(ArrayList<String> cart) {
-         this.cart = cart;
-     }
+        public ArrayList<String> getCart() {
+            return cart;
+        }
 
-     public ArrayList<String> getCartItems0Cart() {
-         return cartItems0Cart;
-     }
+        public void setCart(ArrayList<String> cart) {
+            this.cart = cart;
+        }
 
-     public void setCartItems0Cart(ArrayList<String> cartItems0Cart) {
-         this.cartItems0Cart = cartItems0Cart;
-     }
+        public ArrayList<String> getCartItems0Cart() {
+            return cartItems0Cart;
+        }
 
-     public ArrayList<Cart> getErrors() {
-         return errors;
-     }
+        public void setCartItems0Cart(ArrayList<String> cartItems0Cart) {
+            this.cartItems0Cart = cartItems0Cart;
+        }
 
-     public void setErrors(ArrayList<Cart> errors) {
-         this.errors = errors;
-     }
- }
-class Cart{
-    String cart;
+        public ArrayList<Cart> getErrors() {
+            return errors;
+        }
 
-    public Cart(String cart) {
-        this.cart = cart;
+        public void setErrors(ArrayList<Cart> errors) {
+            this.errors = errors;
+        }
     }
 
-    public String getCart() {
-        return cart;
-    }
+    public class Cart {
+        String cart;
 
-    public void setCart(String cart) {
-        this.cart = cart;
+        public Cart(String cart) {
+            this.cart = cart;
+        }
+
+        public String getCart() {
+            return cart;
+        }
+
+        public void setCart(String cart) {
+            this.cart = cart;
+        }
     }
 }

@@ -1,5 +1,9 @@
 package com.manijee.edtechspark.views.activities;
 
+import static com.manijee.edtechspark.common.Constriants.EMAILID;
+import static com.manijee.edtechspark.common.Constriants.TOKEN;
+import static com.manijee.edtechspark.common.Constriants.USERID;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -58,24 +62,23 @@ public class LoginPage extends AppCompatActivity implements ValidateUserListener
 
         view = email.getRootView();
 
-
         password = findViewById(R.id.edtPassword);
 
         progressBar = findViewById(R.id.progressBar);
 
-        String remember=preferenceManager.getInfo("rememberemail");
+//        String remember=preferenceManager.getInfo("rememberemail");
+//
+//        if (remember!=null&&!remember.isEmpty()){
+////            startActivity(new Intent(LoginPage.this,MainActivity.class));
+////            finish();
+////        }
 
-        if (remember!=null&&!remember.isEmpty()){
-            startActivity(new Intent(LoginPage.this,MainActivity.class));
-            finish();
-        }
-
-        ck.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
+//        ck.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
 
         Register = findViewById(R.id.Notregisteryet);
         Register.setOnClickListener(new View.OnClickListener() {
@@ -130,19 +133,19 @@ public class LoginPage extends AppCompatActivity implements ValidateUserListener
 
     @Override
     public void onValidateUserSuccess(Response response) {
-//        preferenceManager.setInfo("email", validateUserResponsemodel.email);
-//        preferenceManager.setInfo("id", String.valueOf(validateUserResponsemodel.id));
-//        preferenceManager.setInfo("name", validateUserResponsemodel.name);
-//        preferenceManager.setInfo("token",validateUserResponsemodel.token);
         progressBar.setVisibility(View.GONE);
         Log.i("login:", "Succsess"+response.code());
-        if (ck.isChecked()){
-            preferenceManager.setInfo("rememberemail", email.getText().toString());
-        }
         validateUserResponsemodel = (ValidateUserResponsemodel) response.body();
+//        if (ck.isChecked()){
+            preferenceManager.setInfo("rememberemail", email.getText().toString());
+            preferenceManager.setInfo(USERID, String.valueOf(validateUserResponsemodel.id));
+            preferenceManager.setInfo(EMAILID, validateUserResponsemodel.email);
+            preferenceManager.setInfo(TOKEN,validateUserResponsemodel.token);
+//        }
         Log.i("login is :", "Validate"+validateUserResponsemodel.email+validateUserResponsemodel.id);
-        Intent main = new Intent(this, MainActivity.class);
+        Intent main = new Intent(this, All_Courses.class);
         startActivity(main);
+
     }
 
     @Override
@@ -150,7 +153,5 @@ public class LoginPage extends AppCompatActivity implements ValidateUserListener
         progressBar.setVisibility(View.GONE);
         Utills.getInstance().ShowMessage(view,"User Invalid"+msg);
     }
-
-
 
 }

@@ -1,7 +1,7 @@
 package com.manijee.edtechspark.common;
 import android.content.Context;
 import android.content.SharedPreferences;
-
+//siglton pattern
 public class PreferenceManager {
     private static PreferenceManager preferenceManager;
     private static SharedPreferences preferences;
@@ -23,5 +23,11 @@ public class PreferenceManager {
         return  preferences.getString(key,"");
     }
 
-
+public void logout(String key,String key2,String key3){
+     editor.remove(key);
+     editor.remove(key2);
+     editor.remove(key3);
+     editor.clear();
+     editor.commit();
+}
 }

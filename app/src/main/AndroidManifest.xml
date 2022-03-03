@@ -13,18 +13,20 @@
         android:theme="@style/Theme.EdTechSpark"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".views.activities.Cart"
+            android:exported="false" />
+        <activity
+            android:name=".views.activities.AuthorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.activities.CourseLesson"
+            android:exported="false" />
+        <activity
             android:name=".views.activities.CourseDescription"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".views.activities.All_Courses"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".views.activities.MainActivity"
             android:exported="true"
@@ -32,9 +34,6 @@
             android:theme="@style/Theme.EdTechSpark.NoActionBar" />
         <activity
             android:name=".views.activities.SplashScreen"
-            android:exported="true"></activity>
-        <activity
-            android:name=".views.activities.LoginPage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -42,6 +41,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".views.activities.LoginPage"
+            android:exported="true"></activity>
         <activity
             android:name=".views.activities.CreateUserActivity"
             android:exported="true" />

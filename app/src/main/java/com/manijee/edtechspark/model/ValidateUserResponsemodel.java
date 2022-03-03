@@ -3,7 +3,6 @@ package com.manijee.edtechspark.model;
 import java.util.ArrayList;
 
 public class ValidateUserResponsemodel {
-
         public int id;
         public String name;
         public String email;

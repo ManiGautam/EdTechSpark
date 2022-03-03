@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/recyclerCard"
@@ -9,73 +10,85 @@
     android:layout_margin="@dimen/size_10dp"
     android:padding="15dp">
 
-
-    <ImageView
-        android:id="@+id/coursepic"
-        android:layout_width="242dp"
-        android:layout_height="112dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:src="@drawable/ic_menu_gallery"/>
-
-    <TextView
-        android:id="@+id/coursename"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="C# FOR BEGINNERS"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@id/coursepic"
-        android:layout_marginTop="@dimen/size_20dp"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <TextView
-        android:id="@+id/courseprice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="₹1000"
-        android:textColor="@color/black"
-        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/coursepic"
-        android:layout_marginTop="@dimen/size_20dp"
-        />
-
-    <TextView
-        android:id="@+id/coursedecripstion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Learn C# from scratch by doing hands-on labs and building projects."
-        android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@id/coursename"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="@dimen/size_20dp"
-        />
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/upperlayout">
 
-    <TextView
-        android:id="@+id/courselevel"
-        android:layout_width="wrap_content"
+        <ImageView
+            android:id="@+id/coursepic"
+            android:layout_width="242dp"
+            android:layout_height="112dp"
+            android:src="@drawable/ic_menu_gallery"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/coursename"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_20dp"
+            android:text="C# FOR BEGINNERS"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/coursepic" />
+
+        <TextView
+            android:id="@+id/courseprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_20dp"
+            android:text="₹1000"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/coursepic" />
+
+        <TextView
+            android:id="@+id/coursedecripstion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_20dp"
+            android:text="Learn C# from scratch by doing hands-on labs and building projects."
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/coursename" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/downlayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Level:Beginner"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        android:layout_marginTop="@dimen/size_20dp"
-        app:layout_constraintTop_toBottomOf="@+id/coursedecripstion"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/upperlayout"
+        tools:layout_editor_absoluteX="6dp">
 
-    <TextView
-        android:id="@+id/courseaddtocart"
-        android:layout_width="97dp"
-        android:layout_height="29dp"
-        android:background="@drawable/border"
-        android:gravity="center"
-        android:padding="5dp"
-        android:text=" Add To Cart"
-        android:textColor="#007bff"
-        app:layout_constraintTop_toBottomOf="@id/coursedecripstion"
-        android:layout_marginTop="@dimen/size_20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
+        <TextView
+            android:id="@+id/courselevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Level:Beginner"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/courseaddtocart"
+            android:layout_width="97dp"
+            android:layout_height="29dp"
+            android:background="@drawable/border"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text=" Add To Cart"
+            android:textColor="#007bff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

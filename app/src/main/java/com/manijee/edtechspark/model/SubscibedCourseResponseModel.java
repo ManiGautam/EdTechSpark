@@ -1,7 +1,6 @@
 package com.manijee.edtechspark.model;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 public class SubscibedCourseResponseModel {
     private int id;
@@ -242,7 +241,102 @@ public class SubscibedCourseResponseModel {
      private String updatedDate;
      private String courseTopic;
 
-}
+     public int getId() {
+         return id;
+     }
+
+     public void setId(int id) {
+         this.id = id;
+     }
+
+     public String getLessonName() {
+         return lessonName;
+     }
+
+     public void setLessonName(String lessonName) {
+         this.lessonName = lessonName;
+     }
+
+     public String getVideoPath() {
+         return videoPath;
+     }
+
+     public void setVideoPath(String videoPath) {
+         this.videoPath = videoPath;
+     }
+
+     public String getContentPath() {
+         return contentPath;
+     }
+
+     public void setContentPath(String contentPath) {
+         this.contentPath = contentPath;
+     }
+
+     public String getDuration() {
+         return duration;
+     }
+
+     public void setDuration(String duration) {
+         this.duration = duration;
+     }
+
+     public int getSequence() {
+         return sequence;
+     }
+
+     public void setSequence(int sequence) {
+         this.sequence = sequence;
+     }
+
+     public boolean isPreview() {
+         return isPreview;
+     }
+
+     public void setPreview(boolean preview) {
+         isPreview = preview;
+     }
+
+     public boolean isActive() {
+         return isActive;
+     }
+
+     public void setActive(boolean active) {
+         isActive = active;
+     }
+
+     public int getCourseTopicId() {
+         return courseTopicId;
+     }
+
+     public void setCourseTopicId(int courseTopicId) {
+         this.courseTopicId = courseTopicId;
+     }
+
+     public String getCreatedDate() {
+         return createdDate;
+     }
+
+     public void setCreatedDate(String createdDate) {
+         this.createdDate = createdDate;
+     }
+
+     public String getUpdatedDate() {
+         return updatedDate;
+     }
+
+     public void setUpdatedDate(String updatedDate) {
+         this.updatedDate = updatedDate;
+     }
+
+     public String getCourseTopic() {
+         return courseTopic;
+     }
+
+     public void setCourseTopic(String courseTopic) {
+         this.courseTopic = courseTopic;
+     }
+ }
 
  class CourseTopic{
      private int id;

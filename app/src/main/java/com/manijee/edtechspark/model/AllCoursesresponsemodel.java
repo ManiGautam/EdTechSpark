@@ -216,7 +216,7 @@ public class AllCoursesresponsemodel implements Serializable {
         }
     }
 
-    public class Mentor{
+    public class Mentor implements Serializable{
         private int id;
         private String name;
         private String email;
@@ -300,7 +300,7 @@ public class AllCoursesresponsemodel implements Serializable {
         }
     }
 
-    public class CourseLesson{
+    public class CourseLesson implements Serializable{
         private int id;
         private String lessonName;
         private String videoPath;
@@ -411,7 +411,7 @@ public class AllCoursesresponsemodel implements Serializable {
         }
     }
 
-    public class CourseTopic{
+    public class CourseTopic {
         private int id;
         private String topicName;
         private boolean isActive;
@@ -419,6 +419,7 @@ public class AllCoursesresponsemodel implements Serializable {
         private int courseId;
         private String course;
         private ArrayList<CourseLesson> courseLessons;
+
 
         public int getId() {
             return id;

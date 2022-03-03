@@ -1,9 +1,16 @@
 package com.manijee.edtechspark.views.activities;
 
+import static com.manijee.edtechspark.common.Constriants.EMAILID;
+import static com.manijee.edtechspark.common.Constriants.TOKEN;
+import static com.manijee.edtechspark.common.Constriants.USERID;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
@@ -27,8 +34,7 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        preferenceManager = new PreferenceManager();
-
+        preferenceManager = PreferenceManager.getInstance(this);
         setSupportActionBar(binding.appBarMain.toolbar);
         binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +55,18 @@ public class MainActivity extends AppCompatActivity{
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
+binding.navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId()==R.id.Logout){
+            preferenceManager.logout(USERID,EMAILID, TOKEN);
+            Intent move = new Intent(MainActivity.this,All_Courses.class);
+            startActivity(move);
+            MainActivity.this.finish();
+        }
+        return false;
+    }
+});
     }
 
     @Override
